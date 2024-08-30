@@ -1,0 +1,44 @@
+<div>
+  <input
+    type="text"
+    placeholder="Search by name..."
+    [(ngModel)]="searchQuery"
+    class="search-bar"
+  />
+
+  <table>
+    <thead>
+    <tr>
+      <th
+        (click)="sort('name')"
+        [class.sort-asc]="sortColumn === 'name' && sortDirection === 'asc'"
+        [class.sort-desc]="sortColumn === 'name' && sortDirection === 'desc'"
+      >
+        Name
+      </th>
+      <th
+        (click)="sort('rating')"
+        [class.sort-asc]="sortColumn === 'rating' && sortDirection === 'asc'"
+        [class.sort-desc]="sortColumn === 'rating' && sortDirection === 'desc'"
+      >
+        Rating
+      </th>
+      <th
+        (click)="sort('reviews')"
+        [class.sort-asc]="sortColumn === 'reviews' && sortDirection === 'asc'"
+        [class.sort-desc]="sortColumn === 'reviews' && sortDirection === 'desc'"
+      >
+        # Reviews
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let restaurant of filteredRestaurants">
+      <td>{{ restaurant.name }}</td>
+      <td>{{ restaurant.rating }}</td>
+      <td>{{ restaurant.reviews }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
