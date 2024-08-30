@@ -1,11 +1,77 @@
 <div>
   <input
     type="text"
-    placeholder="Search by name..."
+    placeholder="Search by name or description..."
     [(ngModel)]="searchQuery"
     class="search-bar"
   />
 
+  <!-- Area filter checkboxes -->
+  <div class="area-filters">
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.all"
+        (change)="toggleFilter('all', $event.target.checked)"
+      />
+      All
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.center"
+        (change)="toggleFilter('center', $event.target.checked)"
+      />
+      Center
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.north"
+        (change)="toggleFilter('north', $event.target.checked)"
+      />
+      North
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.west"
+        (change)="toggleFilter('west', $event.target.checked)"
+      />
+      West
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.south"
+        (change)="toggleFilter('south', $event.target.checked)"
+      />
+      South
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.east"
+        (change)="toggleFilter('east', $event.target.checked)"
+      />
+      East
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="filters.southeast"
+        (change)="toggleFilter('southeast', $event.target.checked)"
+      />
+      Southeast
+    </label>
+  </div>
+
+  <!-- Display number of restaurants -->
+  <div class="restaurant-count">
+    {{ filteredRestaurants.length }} Restaurant{{ filteredRestaurants.length !== 1 ? 's' : '' }}
+  </div>
+
+  <!-- Table -->
   <table>
     <thead>
     <tr>
