@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "resti": {
+    "restaurants_fe": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/resti",
+            "outputPath": "dist/restaurants_fe",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "resti:build"
+            "browserTarget": "restaurants_fe:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "resti:build:production"
+              "browserTarget": "restaurants_fe:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "resti:build"
+            "browserTarget": "restaurants_fe:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "resti:serve"
+            "devServerTarget": "restaurants_fe:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "resti:serve:production"
+              "devServerTarget": "restaurants_fe:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "resti"
+  "defaultProject": "restaurants_fe"
 }
